@@ -15,7 +15,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  PROJECT_ID: spingboot-reactive
   GKE_CLUSTER: autopilot-cluster-1    # Add your cluster name here.
   GKE_ZONE: us-central1   # Add your cluster zone here.
   DEPLOYMENT_NAME: sping-kube # Add your deployment name here.
@@ -35,7 +35,7 @@ jobs:
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
       with:
         service_account_key: ${{ secrets.GKE_SA_KEY }}
-        project_id: ${{ secrets.GKE_PROJECT }}
+        project_id: spingboot-reactive
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
