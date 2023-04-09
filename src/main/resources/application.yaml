@@ -1,0 +1,14 @@
+spring:
+  r2dbc:
+    url: r2dbc:pool:mysql://127.0.0.1:3306/loan?sslMode=preferred&tlsVersion=TLSv1.3%2CTLSv1.2%2CTLSv1.1&maxIdleTime=PT60S&maxSize=5&initialSize=2&poolName=kerich
+    username: root
+    password: Coder_1234
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+server:
+  port: 8080
+
+
+

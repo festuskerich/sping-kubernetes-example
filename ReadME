@@ -1,0 +1,1 @@
+helm install mika-chart simple-kube/ --values simple-kube/values.yaml
