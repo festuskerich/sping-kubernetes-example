@@ -1,1 +1,20 @@
 helm install mika-chart simple-kube/ --values simple-kube/values.yaml
+
+gcloud projects add-iam-policy-binding spingboot-reactive \
+	--member=serviceAccount:spring-reactive@spingboot-reactive.iam.gserviceaccount.com \
+	--role=roles/container.admin
+
+
+  gcloud projects add-iam-policy-binding spingboot-reactive \
+	--member=serviceAccount:spring-reactive@spingboot-reactive.iam.gserviceaccount.com \
+	--role=roles/storage.admin
+
+  gcloud projects add-iam-policy-binding spingboot-reactive \
+	--member=serviceAccount:spring-reactive@spingboot-reactive.iam.gserviceaccount.com \
+	--role=roles/container.clusterViewer
+
+
+  gcloud iam service-accounts keys create key.json --iam-account=spring-reactive@spingboot-reactive.iam.gserviceaccount.com
+
+
+export GKE_SA_KEY=$(cat key.json | base64)
