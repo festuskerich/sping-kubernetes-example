@@ -1,4 +1,0 @@
-helmCharts:
-- name: ../../simple-kube
-  releaseName: simple-kube
-  namespace: simple-kube
