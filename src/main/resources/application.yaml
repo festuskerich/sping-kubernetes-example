@@ -7,6 +7,8 @@ spring:
     r2dbc:
       repositories:
         enabled: true
+  webflux:
+    base-path: /api/v1
 server:
   port: 8080
 
