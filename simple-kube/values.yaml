@@ -8,7 +8,7 @@ image:
   repository: spring-kube
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.1"
+  tag: "8deed6562196212f547efab2dea58f9811acc9a0"
 
 imagePullSecrets: []
 nameOverride: "mik"
