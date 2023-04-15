@@ -20,7 +20,7 @@ env:
   GKE_ZONE: us-central1   # Add your cluster zone here.
   DEPLOYMENT_NAME: sping-kube # Add your deployment name here.
   APP_NAMESPACE: autopilot-cluster-1
-  IMAGE: static-site
+  IMAGE: spring-kube
 
 jobs:
   setup-build-publish-deploy:
