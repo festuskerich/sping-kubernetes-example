@@ -75,6 +75,6 @@ jobs:
     - name: Deploy using Helm
       uses: WyriHaximus/github-action-helm3@v3
       with:
-          exec: helm upgrade $PROJECT_ID ./simple-kube/ --install --wait --atomic --namespace=$APP_NAMESPACE --values=./simple-kube/values.yaml
+          exec: helm upgrade $PROJECT_ID ./simple-kube/ --install --set randocats.image.tag=$GITHUB_SHA --wait --atomic --namespace=APP_NAMESPACE --values=./simple-kube/values.yaml
           kubeconfig: '${{ secrets.GKE_SA_KEY }}'
         
