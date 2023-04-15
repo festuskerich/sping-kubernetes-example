@@ -19,6 +19,7 @@ env:
   GKE_CLUSTER: autopilot-cluster-1    # Add your cluster name here.
   GKE_ZONE: us-central1   # Add your cluster zone here.
   DEPLOYMENT_NAME: sping-kube # Add your deployment name here.
+  APP_NAMESPACE: autopilot-cluster-1
   IMAGE: static-site
 
 jobs:
@@ -74,6 +75,6 @@ jobs:
     - name: Deploy using Helm
       uses: WyriHaximus/github-action-helm3@v3
       with:
-          exec: helm upgrade $PROJECT_ID ./simple-kube/ --install --wait --atomic --namespace=APP_NAMESPACE --values=./simple-kube/values.yaml
+          exec: helm upgrade $PROJECT_ID ./simple-kube/ --install --wait --atomic --namespace=$APP_NAMESPACE --values=./simple-kube/values.yaml
           kubeconfig: '${{ secrets.GKE_SA_KEY }}'
         
