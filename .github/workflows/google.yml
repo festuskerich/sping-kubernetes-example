@@ -18,7 +18,7 @@ env:
   PROJECT_ID: spingboot-reactive
   GKE_CLUSTER: autopilot-cluster-1    # Add your cluster name here.
   GKE_ZONE: us-central1   # Add your cluster zone here.
-  DEPLOYMENT_NAME: sping-kube # Add your deployment name here.
+  DEPLOYMENT_NAME: spring-kube # Add your deployment name here.
   IMAGE: spring-kube
 
 jobs:
