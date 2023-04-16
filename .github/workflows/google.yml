@@ -60,7 +60,7 @@ jobs:
     - name: Build
       run: |-
         docker build \
-          --tag "gcr.io/$PROJECT_ID/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+          --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
@@ -68,12 +68,12 @@ jobs:
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
-        docker push "gcr.io/$PROJECT_ID/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+        docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
 
     # Deploy using Helm
     - name: Deploy using Helm
       uses: WyriHaximus/github-action-helm3@v3
       with:
-          exec: helm upgrade $PROJECT_ID ./simple-kube/ --install --wait --atomic  --values=./simple-kube/values.yaml --set=image.tag=$GITHUB_SHA
+          exec: helm upgrade $PROJECT_ID ./simple-kube/ --install --wait --atomic  --values=./simple-kube/values.yaml --set=image.tag=$IMAGE:$GITHUB_SHA
           kubeconfig: '${{ secrets.GKE_SA_KEY }}'
         
